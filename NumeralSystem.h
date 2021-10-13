@@ -6,13 +6,10 @@
 
 class NumeralSystem {
 private:
-    int toNumber(int num);
+    int val(char c);
 
 public:
-
-    int iint(int a, int base, char *s);
-
-    void ddouble(double a, int base, char *s);
+    int toDeci(char *str, int base);
 
 };
 

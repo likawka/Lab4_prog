@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include "NumeralSystem.h"
 
 using namespace std;
@@ -18,20 +19,17 @@ int main() {
 
     do {
 
-        double a;
-        char s[100] = { 0 };
-        int base;
-        cout << "Введіть число: ";
-        cin >> a;
-        cout << "Введіть систему числення: ";
-        cin >> base;
-        int k = ns.iint((int)a, base, s);
-        s[k++] = ',';
-        ns.ddouble(a-(int)a, base, &s[k]);
-        cout << s;
+            char str[100];
+            cout << "Введіть число " << endl;
+            cin >> str;
+            cout << "Введіть систему числення " << endl;
+            int base;
+            cin >> base;
+
+            printf(" Десятковий еквівалент %s у базі %d дорівнює "
+                   " %d\n", str, base, ns.toDeci(str, base));
+
         cout << endl;
-
-
         cout << " Продовжити?";
         cin >> yn;
     } while (*yn == 'y');
