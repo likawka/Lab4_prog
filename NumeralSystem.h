@@ -7,10 +7,17 @@
 class NumeralSystem {
 private:
     int val(char c);
+    int toDeci(const std::string& number, int base);
+
+    int base_;
+    int number_;
 
 public:
-    int toDeci(char *str, int base);
 
+    NumeralSystem(const std::string& number, int base);
+    NumeralSystem operator+(const NumeralSystem& other);
+
+    void print();
 };
 
 

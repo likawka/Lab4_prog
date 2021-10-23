@@ -17,24 +17,39 @@ int NumeralSystem::val(char c)
         return (int)c - 'A' + 10;
 }
 
-int NumeralSystem::toDeci(char *str, int base)
+int NumeralSystem::toDeci(const std::string& number, int base)
 {
-    int len = strlen(str);
+    int len = number.length();
     int power = 1;
     int num = 0;
     int i;
 
     for (i = len - 1; i >= 0; i--)
     {
-        if (val(str[i]) >= base)
+        if (val(number[i]) >= base)
         {
             printf("Invalid Number");
             return -1;
         }
 
-        num += val(str[i]) * power;
+        num += val(number[i]) * power;
         power = power * base;
     }
 
     return num;
+}
+
+NumeralSystem::NumeralSystem(const std::string &number, int base):
+    base_(base),
+    number_(toDeci(number, base)) {
+
+}
+
+NumeralSystem NumeralSystem::operator+(const NumeralSystem& other) {
+    int sum = number_ + other.number_;
+    return NumeralSystem(std::to_string(sum), 10);
+}
+
+void NumeralSystem::print() {
+    std::cout << number_ << "(base" << base_ << ")";
 }

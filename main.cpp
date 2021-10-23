@@ -9,7 +9,7 @@ int main() {
 
     char *yn = new char(0);
 
-    NumeralSystem ns;
+//    NumeralSystem ns;
 
     cout << endl;
     cout << "====================================================" << endl;
@@ -17,22 +17,27 @@ int main() {
     cout << " The program was made by Iryna Zinko " << endl;
     cout << endl;
 
-    do {
+    NumeralSystem a("100", 2);
+    NumeralSystem b("1", 16);
 
-            char str[100];
-            cout << "Введіть число " << endl;
-            cin >> str;
-            cout << "Введіть систему числення " << endl;
-            int base;
-            cin >> base;
+    (a+b).print();
 
-            printf(" Десятковий еквівалент %s у базі %d дорівнює "
-                   " %d\n", str, base, ns.toDeci(str, base));
-
-        cout << endl;
-        cout << " Продовжити?";
-        cin >> yn;
-    } while (*yn == 'y');
+//    do {
+//
+//            char str[100];
+//            cout << "Введіть число " << endl;
+//            cin >> str;
+//            cout << "Введіть систему числення " << endl;
+//            int base;
+//            cin >> base;
+//
+//            printf(" Десятковий еквівалент %s у базі %d дорівнює "
+//                   " %d\n", str, base, ns.toDeci(str, base));
+//
+//        cout << endl;
+//        cout << " Продовжити?";
+//        cin >> yn;
+//    } while (*yn == 'y');
 
 
     return 0;
